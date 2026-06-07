@@ -1,0 +1,238 @@
+<!--
+AF - Avaliação Final - Linguagens de Programação
+Tema do Projeto: O Cookie - Loja de Cookies
+Aluno: Nelson Capucho Neto - RA: 252079
+Professor: Abimael de Oliveira
+Data de entrega: 07/06
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Cookie - Home</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS próprio -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <!-- MENU -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="./img/logo.png" alt="O Cookie" class="logo-nav"></a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Alternar navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="galeria.html">Galeria</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contato.html">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- CARROSSEL -->
+        <section class="hero">
+            <div id="carouselHome" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./img/banner-01.jpg" class="d-block w-100 carousel-img" alt="Cookies fresquinhos saindo do forno">
+                        <div class="carousel-caption">
+                            <h2 class="animado">Feitos com amor, sabor e uma pitada de felicidade</h2>
+                            <p>Os melhores cookies artesanais da cidade</p>
+                            <a href="galeria.html" class="btn btn-cookie mt-2">Ver Galeria</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="./img/banner-02.jpg" class="d-block w-100 carousel-img" alt="Cookies de chocolate com gotas">
+                        <div class="carousel-caption">
+                            <h2>Chocolate que derrete na boca</h2>
+                            <p>Double chocolate, meio amargo, ao leite — você escolhe</p>
+                            <a href="galeria.html" class="btn btn-cookie mt-2">Conheça a galeria</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="./img/banner-03.jpg" class="d-block w-100 carousel-img" alt="Caixa de cookies variados">
+                        <div class="carousel-caption">
+                            <h2>Presentes que adoçam qualquer momento</h2>
+                            <p>Caixas especiais para datas comemorativas</p>
+                            <a href="contato.html" class="btn btn-cookie mt-2">Fazer um pedido</a>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev" aria-label="Slide anterior">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next" aria-label="Próximo slide">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
+
+        <!-- APRESENTAÇÃO -->
+        <section class="apresentacao">
+            <div class="container">
+                <div class="apresentacao-inner">
+                    <img src="./img/mascote.png" alt="Mascote O Cookie" class="mascote-apresentacao animado">
+                    <div class="apresentacao-texto text-center">
+                        <h2 class="titulo-gradiente animado">Nossa História</h2>
+                        <p class="lead mt-3">
+                            A <strong>O Cookie</strong> nasceu de uma paixão verdadeira por receitas artesanais. 
+                            Cada cookie é preparado com ingredientes selecionados, assado na hora e entregue com muito carinho. 
+                            Mais do que um docinho, é uma experiência que você não esquece.
+                        </p>
+                    </div>
+                </div>
+                <div class="area-destaques mt-5">
+                    <div class="card-destaque text-center">
+                        <span class="icone-destaque">🧁</span>
+                        <h4>100% Artesanal</h4>
+                        <p>Receitas feitas à mão, sem conservantes.</p>
+                    </div>
+                    <div class="card-destaque text-center">
+                        <span class="icone-destaque">🚚</span>
+                        <h4>Entrega Rápida</h4>
+                        <p>Seu pedido chega fresquinho em até 2 horas.</p>
+                    </div>
+                    <div class="card-destaque text-center">
+                        <span class="icone-destaque">🌟</span>
+                        <h4>5 Estrelas</h4>
+                        <p>Avaliação máxima pelos nossos clientes fiéis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DESTAQUES -->
+        <section class="destaques">
+            <div class="container">
+                <h2 class="titulo-gradiente text-center animado">Sabores em Destaque</h2>
+                <p class="text-center mt-2 mb-5">Os queridinhos dos nossos clientes essa semana</p>
+
+                <div class="row g-4">
+                    <article class="col-md-4">
+                        <div class="card card-personalizado h-100">
+                            <img src="./img/cookie-gotas.jpg" class="card-img-top" alt="Cookie de gotas de chocolate">
+                            <div class="card-body">
+                                <h3 class="card-title">Gotas de Chocolate</h3>
+                                <p class="card-text">O clássico irresistível. Massa macia, borda crocante e gotas generosas de chocolate belga.</p>
+                                <span class="badge-preco">R$ 8,90</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-md-4">
+                        <div class="card card-personalizado h-100">
+                            <img src="./img/cookie-amendoim.jpg" class="card-img-top" alt="Cookie de manteiga de amendoim">
+                            <div class="card-body">
+                                <h3 class="card-title">Manteiga de Amendoim</h3>
+                                <p class="card-text">Cremoso por dentro, levemente crocante por fora. Uma combinação que vicia de verdade.</p>
+                                <span class="badge-preco">R$ 9,90</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-md-4">
+                        <div class="card card-personalizado h-100">
+                            <img src="./img/cookie-redvelvet.jpg" class="card-img-top" alt="Cookie red velvet com cream cheese">
+                            <div class="card-body">
+                                <h3 class="card-title">Red Velvet</h3>
+                                <p class="card-text">Visual marcante e sabor suave com pedacinhos de cream cheese. O favorito do Instagram.</p>
+                                <span class="badge-preco">R$ 11,90</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAMADA GALERIA -->
+        <section class="chamada-galeria text-center">
+            <div class="container">
+                <h2 class="animado">Tem muito mais te esperando!</h2>
+                <p class="mt-3">Confira o cardápio completo com todos os nossos sabores, lançamentos e edições limitadas.</p>
+                <a href="galeria.html" class="btn btn-cookie mt-3">Ver Galeria Completa</a>
+            </div>
+        </section>
+
+        <!-- CHAMADA CONTATO -->
+        <section class="chamada-contato text-center">
+            <div class="container">
+                <h2 class="animado">Quer fazer um pedido especial?</h2>
+                <p class="mt-3">Entre em contato com a gente. Fazemos encomendas para eventos, aniversários e presentes.</p>
+                <a href="contato.html" class="btn btn-outline-cookie mt-3">Fale Conosco</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape-flex">
+                <div>
+                    <div class="rodape-marca"><img src="./img/logo.png" alt="Logo O Cookie" class="logo-rodape"><img src="./img/mascote.png" alt="Mascote O Cookie" class="mascote-rodape"></div>
+                    <p>Feito com amor e ingredientes de verdade.</p>
+                </div>
+                <div>
+                    <h5>Navegação</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Projeto Acadêmico</h5>
+                    <p>AF - Linguagens de Programação</p>
+                    <p>Aluno: Nelson Capucho Neto - RA: 252079</p>
+                    <p>Turma: ADS</p>
+                    <p>Disciplina: Linguagens de Programação</p>
+                    <p>Ano/Semestre: 2026/1</p>
+                    <p>Prof. Abimael de Oliveira</p>
+                </div>
+            </div>
+            <hr class="rodape-hr">
+            <p class="text-center mt-3">&copy; 2026 - O Cookie. Projeto acadêmico sem fins comerciais.</p>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="btnTopo" class="btn-topo">↑</button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS próprio -->
+    <script src="./js/script.js"></script>
+</body>
+</html>

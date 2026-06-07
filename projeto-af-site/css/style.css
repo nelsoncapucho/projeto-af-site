@@ -1,0 +1,705 @@
+/*
+AF - Avaliação Final - Linguagens de Programação
+Tema do Projeto: O Cookie - Loja de Cookies
+Aluno: Nelson Capucho Neto - RA: 252079
+Professor: Abimael de Oliveira
+Data de entrega: 07/06
+*/
+
+/* =============================================
+   VARIÁVEIS E RESET
+   ============================================= */
+:root {
+    --cor-primaria: #c8602a;
+    --cor-secundaria: #7b3a10;
+    --cor-acento: #f5a623;
+    --cor-clara: #fdf8f3;
+    --cor-escura: #2c1810;
+    --cor-texto: #4a3728;
+    --cor-navbar: rgba(44, 24, 16, 0.96);
+    --espacamento-padrao: 2rem;
+    --raio-borda: 12px;
+    --sombra: 0 4px 16px rgba(44, 24, 16, 0.12);
+    --fonte-titulo: 'Playfair Display', Georgia, serif;
+    --fonte-corpo: 'Lato', Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    background-color: var(--cor-clara);
+    color: var(--cor-texto);
+    line-height: 1.7;
+    padding-top: 70px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+section {
+    padding: 70px 0;
+}
+
+/* =============================================
+   TIPOGRAFIA
+   ============================================= */
+h1, h2, h3 {
+    font-family: var(--fonte-titulo);
+}
+
+.titulo-gradiente {
+    background: linear-gradient(90deg, var(--cor-primaria), var(--cor-acento));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 2.2rem;
+}
+
+/* =============================================
+   NAVBAR
+   ============================================= */
+#navbar {
+    background-color: var(--cor-navbar) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--cor-primaria);
+    transition: background-color 0.3s ease;
+}
+
+.navbar-brand {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    color: var(--cor-acento) !important;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-nav {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: white;
+    padding: 4px 8px;
+    transition: transform 0.3s ease;
+}
+
+.logo-nav:hover {
+    transform: scale(1.05);
+}
+
+.logo-rodape {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 8px;
+    padding: 4px 8px;
+}
+
+.mascote-rodape {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+}
+
+.rodape-marca {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+}
+
+/* MASCOTE NA APRESENTAÇÃO */
+.apresentacao-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.mascote-apresentacao {
+    width: 220px;
+    height: auto;
+    flex-shrink: 0;
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+.apresentacao-texto {
+    max-width: 560px;
+}
+
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-12px); }
+}
+
+.nav-link {
+    color: #e8d5c4 !important;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    padding: 8px 16px !important;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    width: 0;
+    height: 2px;
+    background-color: var(--cor-acento);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: calc(100% - 32px);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--cor-acento) !important;
+}
+
+/* =============================================
+   BOTÕES
+   ============================================= */
+.btn-cookie {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-cookie:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(200, 96, 42, 0.4);
+    color: white;
+}
+
+.btn-outline-cookie {
+    background: transparent;
+    color: var(--cor-primaria);
+    border: 2px solid var(--cor-primaria);
+    padding: 10px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-outline-cookie:hover {
+    background-color: var(--cor-primaria);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* =============================================
+   CARROSSEL
+   ============================================= */
+.hero {
+    padding: 0;
+}
+
+#carouselHome {
+    background-color: #120a07;
+}
+
+.carousel-img {
+    width: 100%;
+    height: clamp(420px, 72vh, 760px);
+    object-fit: cover;
+    object-position: center;
+    background-color: #1a0e08;
+}
+
+.carousel-caption {
+    left: 8%;
+    right: auto;
+    bottom: 72px;
+    width: min(460px, 84%);
+    text-align: left;
+    padding: 24px 26px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(28, 16, 11, 0.82), rgba(28, 16, 11, 0.52));
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.55);
+}
+
+.carousel-caption h2 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    line-height: 1.15;
+    margin-bottom: 10px;
+}
+
+.carousel-caption p {
+    font-size: 1.05rem;
+    margin-bottom: 0;
+}
+
+/* =============================================
+   SEÇÃO APRESENTAÇÃO
+   ============================================= */
+.apresentacao {
+    background-color: white;
+}
+
+/* FLEXBOX - área de destaques */
+.area-destaques {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.card-destaque {
+    flex: 1 1 240px;
+    max-width: 300px;
+    background-color: var(--cor-clara);
+    border-radius: var(--raio-borda);
+    padding: 30px 24px;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s ease;
+}
+
+.card-destaque:hover {
+    transform: translateY(-6px);
+}
+
+.icone-destaque {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* =============================================
+   DESTAQUES (CARDS)
+   ============================================= */
+.destaques {
+    background-color: var(--cor-clara);
+}
+
+.card-personalizado {
+    border: none;
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-personalizado:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(44, 24, 16, 0.2);
+}
+
+.card-personalizado .card-img-top {
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card-personalizado:hover .card-img-top {
+    transform: scale(1.06);
+}
+
+.card-title {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-escura);
+}
+
+.badge-preco {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-acento));
+    color: white;
+    padding: 4px 14px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-top: 10px;
+}
+
+/* =============================================
+   CHAMADAS (CTA)
+   ============================================= */
+.chamada-galeria {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    color: white;
+    padding: 80px 0;
+}
+
+.chamada-galeria h2 {
+    font-family: var(--fonte-titulo);
+    color: white;
+    font-size: 2rem;
+}
+
+.chamada-contato {
+    background-color: white;
+    padding: 80px 0;
+}
+
+.chamada-contato h2 {
+    font-family: var(--fonte-titulo);
+}
+
+/* =============================================
+   PÁGINA HERO (galeria e contato)
+   ============================================= */
+.page-hero {
+    background: linear-gradient(135deg, var(--cor-escura), var(--cor-secundaria));
+    color: white;
+    padding: 80px 0 60px;
+}
+
+.page-hero .titulo-gradiente {
+    font-size: 2.5rem;
+}
+
+.page-hero .lead {
+    color: #e8d5c4;
+}
+
+/* =============================================
+   GALERIA - FILTROS
+   ============================================= */
+.filtros {
+    background-color: white;
+    padding: 30px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.btn-filtro {
+    background: transparent;
+    border: 2px solid var(--cor-primaria);
+    color: var(--cor-primaria);
+    padding: 8px 22px;
+    border-radius: 50px;
+    margin: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-filtro:hover,
+.btn-filtro.ativo {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+/* TAGS CATEGORIAS */
+.tag-categoria {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.classicos-tag {
+    background-color: #e8d5c4;
+    color: var(--cor-secundaria);
+}
+
+.lancamentos-tag {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.especiais-tag {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+/* Ocultar cards filtrados */
+.item-galeria.oculto {
+    display: none;
+}
+
+/* =============================================
+   CONTATO
+   ============================================= */
+.contato-wrapper {
+    background-color: white;
+}
+
+/* FLEXBOX - informações de contato */
+.info-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.info-icone {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+
+.redes-sociais h5 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-escura);
+}
+
+.btn-social {
+    background-color: var(--cor-clara);
+    border: 1px solid #ddd;
+    color: var(--cor-texto);
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-social:hover {
+    background-color: var(--cor-primaria);
+    color: white;
+    border-color: var(--cor-primaria);
+}
+
+.form-control,
+.form-select {
+    border-radius: 8px;
+    border: 1.5px solid #ddd;
+    padding: 10px 14px;
+    font-family: var(--fonte-corpo);
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(200, 96, 42, 0.15);
+}
+
+/* =============================================
+   MAPA
+   ============================================= */
+.secao-mapa {
+    background-color: var(--cor-clara);
+}
+
+.mapa-wrapper {
+    border-radius: var(--raio-borda);
+    overflow: hidden;
+    box-shadow: var(--sombra);
+}
+
+/* =============================================
+   RODAPÉ - FLEXBOX
+   ============================================= */
+.rodape {
+    background-color: var(--cor-escura);
+    color: #c4a98e;
+    padding: 50px 0 20px;
+}
+
+/* FLEXBOX - rodapé */
+.rodape-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.rodape-flex > div {
+    flex: 1 1 180px;
+}
+
+.rodape h5 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-acento);
+    margin-bottom: 12px;
+}
+
+.rodape ul {
+    list-style: none;
+    padding: 0;
+}
+
+.rodape ul li {
+    margin-bottom: 6px;
+}
+
+.rodape a {
+    color: #c4a98e;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.rodape a:hover {
+    color: var(--cor-acento);
+}
+
+.rodape p {
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+}
+
+.rodape-hr {
+    border-color: rgba(255,255,255,0.1);
+    margin-top: 30px;
+}
+
+/* =============================================
+   BOTÃO VOLTAR AO TOPO
+   ============================================= */
+.btn-topo {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    display: none;
+    padding: 12px 16px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-acento));
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(200, 96, 42, 0.4);
+    transition: transform 0.3s ease;
+    z-index: 999;
+}
+
+.btn-topo.mostrar {
+    display: block;
+}
+
+.btn-topo:hover {
+    transform: scale(1.1);
+}
+
+/* =============================================
+   ANIMAÇÕES
+   ============================================= */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animado {
+    animation: aparecer 0.8s ease both;
+}
+
+/* =============================================
+   RESPONSIVIDADE
+   ============================================= */
+@media (max-width: 768px) {
+    .carousel-img {
+        height: 360px;
+    }
+
+    .carousel-caption {
+        left: 5%;
+        right: 5%;
+        bottom: 28px;
+        width: auto;
+        padding: 16px 18px;
+    }
+
+    .carousel-caption h2 {
+        font-size: 1.3rem;
+        margin-bottom: 6px;
+    }
+
+    .carousel-caption p {
+        display: block;
+        font-size: 0.92rem;
+    }
+
+    .titulo-gradiente {
+        font-size: 1.7rem;
+    }
+
+    .rodape-flex {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .area-destaques {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-destaque {
+        max-width: 100%;
+    }
+
+    .page-hero {
+        padding: 60px 0 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 62px;
+    }
+
+    .carousel-img {
+        height: 300px;
+    }
+
+    .carousel-caption {
+        left: 12px;
+        right: 12px;
+        bottom: 16px;
+        width: auto;
+        padding: 14px 14px;
+        border-radius: 14px;
+    }
+
+    .carousel-caption p {
+        display: none;
+    }
+
+    section {
+        padding: 50px 0;
+    }
+
+    .chamada-galeria,
+    .chamada-contato {
+        padding: 50px 0;
+    }
+}

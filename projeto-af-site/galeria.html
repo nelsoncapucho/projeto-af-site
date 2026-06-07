@@ -1,0 +1,246 @@
+<!--
+AF - Avaliação Final - Linguagens de Programação
+Tema do Projeto: O Cookie - Loja de Cookies
+Aluno: Nelson Capucho Neto - RA: 252079
+Professor: Abimael de Oliveira
+Data de entrega: 07/06
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Cookie - Galeria</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS próprio -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <!-- MENU -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="./img/logo.png" alt="O Cookie" class="logo-nav"></a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Alternar navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="galeria.html">Galeria</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contato.html">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- TÍTULO DA PÁGINA -->
+        <section class="page-hero text-center">
+            <div class="container">
+                <h1 class="titulo-gradiente animado">Galeria de Sabores</h1>
+                <p class="lead mt-3">Explore nossos sabores, novidades e lançamentos especiais.</p>
+            </div>
+        </section>
+
+        <!-- FILTROS -->
+        <section class="filtros">
+            <div class="container text-center">
+                <button class="btn-filtro ativo" data-filtro="todos">Todos</button>
+                <button class="btn-filtro" data-filtro="classicos">Clássicos</button>
+                <button class="btn-filtro" data-filtro="lancamentos">Lançamentos</button>
+                <button class="btn-filtro" data-filtro="especiais">Edições Especiais</button>
+            </div>
+        </section>
+
+        <!-- GALERIA DE COOKIES -->
+        <section class="galeria container">
+            <h2 class="titulo-gradiente text-center animado">Clássicos</h2>
+            <p class="text-center mt-2 mb-5">Os sabores que nunca saem de moda</p>
+
+            <div class="row g-4" id="gridGaleria">
+
+                <!-- Clássicos -->
+                <article class="col-md-4 item-galeria classicos">
+                    <div class="card card-personalizado h-100">
+                        <figure>
+                            <img src="./img/cookie-gotas.jpg" class="card-img-top" alt="Cookie clássico de gotas de chocolate">
+                            <figcaption class="d-none">Cookie de gotas de chocolate - O Cookie</figcaption>
+                        </figure>
+                        <div class="card-body">
+                            <span class="tag-categoria classicos-tag">Clássico</span>
+                            <h3 class="card-title mt-2">Gotas de Chocolate</h3>
+                            <p class="card-text">O queridinho de sempre. Massa macia com borda levemente crocante e gotas generosas de chocolate belga.</p>
+                            <span class="badge-preco">R$ 8,90</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-md-4 item-galeria classicos">
+                    <div class="card card-personalizado h-100">
+                        <figure>
+                            <img src="./img/cookie-amendoim.jpg" class="card-img-top" alt="Cookie de manteiga de amendoim">
+                            <figcaption class="d-none">Cookie de manteiga de amendoim - O Cookie</figcaption>
+                        </figure>
+                        <div class="card-body">
+                            <span class="tag-categoria classicos-tag">Clássico</span>
+                            <h3 class="card-title mt-2">Manteiga de Amendoim</h3>
+                            <p class="card-text">Textura cremosa por dentro, levemente dourado por fora. Rico em sabor e impossível de comer só um.</p>
+                            <span class="badge-preco">R$ 9,90</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-md-4 item-galeria classicos">
+                    <div class="card card-personalizado h-100">
+                        <figure>
+                            <img src="./img/cookie-aveia.jpg" class="card-img-top" alt="Cookie de aveia com passas">
+                            <figcaption class="d-none">Cookie de aveia com passas - O Cookie</figcaption>
+                        </figure>
+                        <div class="card-body">
+                            <span class="tag-categoria classicos-tag">Clássico</span>
+                            <h3 class="card-title mt-2">Aveia com Passas</h3>
+                            <p class="card-text">Crocante, nutritivo e delicioso. Uma versão mais saudável sem abrir mão do sabor incrível.</p>
+                            <span class="badge-preco">R$ 8,50</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Lançamentos -->
+                <article class="col-md-4 item-galeria lancamentos">
+                    <div class="card card-personalizado h-100">
+                        <figure>
+                            <img src="./img/cookie-redvelvet.jpg" class="card-img-top" alt="Cookie red velvet com cream cheese">
+                            <figcaption class="d-none">Cookie Red Velvet - O Cookie</figcaption>
+                        </figure>
+                        <div class="card-body">
+                            <span class="tag-categoria lancamentos-tag">🆕 Lançamento</span>
+                            <h3 class="card-title mt-2">Red Velvet</h3>
+                            <p class="card-text">Visual marcante em vermelho intenso com pedaços de cream cheese. O favorito das fotos e do paladar.</p>
+                            <span class="badge-preco">R$ 11,90</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-md-4 item-galeria lancamentos">
+                    <div class="card card-personalizado h-100">
+                        <figure>
+                            <img src="./img/cookie-nutella.jpg" class="card-img-top" alt="Cookie de Nutella recheado">
+                            <figcaption class="d-none">Cookie recheado de Nutella - O Cookie</figcaption>
+                        </figure>
+                        <div class="card-body">
+                            <span class="tag-categoria lancamentos-tag">🆕 Lançamento</span>
+                            <h3 class="card-title mt-2">Recheado de Nutella</h3>
+                            <p class="card-text">Por fora parece um cookie comum, mas esconde um recheio generoso de Nutella que derrete na primeira mordida.</p>
+                            <span class="badge-preco">R$ 13,90</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-md-4 item-galeria lancamentos">
+                    <div class="card card-personalizado h-100">
+                        <figure>
+                            <img src="./img/cookie-limao.jpg" class="card-img-top" alt="Cookie de limão com merengue">
+                            <figcaption class="d-none">Cookie de limão siciliano - O Cookie</figcaption>
+                        </figure>
+                        <div class="card-body">
+                            <span class="tag-categoria lancamentos-tag">🆕 Lançamento</span>
+                            <h3 class="card-title mt-2">Limão Siciliano</h3>
+                            <p class="card-text">Azedinho na medida certa, com raspas de limão siciliano e cobertura levinha de açúcar. Refrescante e diferente.</p>
+                            <span class="badge-preco">R$ 10,90</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Edições Especiais -->
+                <article class="col-md-6 item-galeria especiais">
+                    <div class="card card-personalizado h-100">
+                        <figure>
+                            <img src="./img/caixa-presente.jpg" class="card-img-top" alt="Caixa especial de cookies para presente">
+                            <figcaption class="d-none">Caixa especial de cookies - O Cookie</figcaption>
+                        </figure>
+                        <div class="card-body">
+                            <span class="tag-categoria especiais-tag">⭐ Edição Especial</span>
+                            <h3 class="card-title mt-2">Caixa Presente (6 un.)</h3>
+                            <p class="card-text">Monte sua caixa com os 6 sabores que quiser. Embalagem especial, laço e cartãozinho personalizado inclusos. Perfeita para datas comemorativas.</p>
+                            <span class="badge-preco">R$ 59,90</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-md-6 item-galeria especiais">
+                    <div class="card card-personalizado h-100">
+                        <figure>
+                            <img src="./img/kit-aconchego.jpg" class="card-img-top" alt="Caixa de cookies de chocolate quente">
+                            <figcaption class="d-none">Kit cookie com chocolate quente - O Cookie</figcaption>
+                        </figure>
+                        <div class="card-body">
+                            <span class="tag-categoria especiais-tag">⭐ Edição Especial</span>
+                            <h3 class="card-title mt-2">Kit Aconchego</h3>
+                            <p class="card-text">4 cookies sortidos + sachê de chocolate quente artesanal. O kit perfeito para uma tarde fria ou uma lembrança especial.</p>
+                            <span class="badge-preco">R$ 39,90</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape-flex">
+                <div>
+                    <div class="rodape-marca"><img src="./img/logo.png" alt="Logo O Cookie" class="logo-rodape"><img src="./img/mascote.png" alt="Mascote O Cookie" class="mascote-rodape"></div>
+                    <p>Feito com amor e ingredientes de verdade.</p>
+                </div>
+                <div>
+                    <h5>Navegação</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Projeto Acadêmico</h5>
+                    <p>AF - Linguagens de Programação</p>
+                    <p>Aluno: Nelson Capucho Neto - RA: 252079</p>
+                    <p>Turma: ADS</p>
+                    <p>Disciplina: Linguagens de Programação</p>
+                    <p>Ano/Semestre: 2026/1</p>
+                    <p>Prof. Abimael de Oliveira</p>
+                </div>
+            </div>
+            <hr class="rodape-hr">
+            <p class="text-center mt-3">&copy; 2026 - O Cookie. Projeto acadêmico sem fins comerciais.</p>
+        </div>
+    </footer>
+
+    <button id="btnTopo" class="btn-topo">↑</button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS próprio -->
+    <script src="./js/script.js"></script>
+</body>
+</html>
